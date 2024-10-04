@@ -1,0 +1,2771 @@
+{
+	"info": {
+		"_postman_id": "ed91b830-1892-4648-b85a-3776eea72414",
+		"name": "EduTrek Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37331405"
+	},
+	"item": [
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "Add New Student",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"studentId\": \"test\",\r\n    \"name\": \"test\",\r\n    \"surname\": \"test\",\r\n    \"phoneNumber\": \"0000000000\",\r\n    \"email\": \"123@mail.com\",\r\n    \"place\": \"Rehovot\",\r\n    \"status\":\"STUDENT\",\r\n    \"course\": \"FSD\",\r\n    \"groups\": [\r\n        \"java52\"\r\n    ],\r\n    \"comments\": [],\r\n    \"paymentLog\": [\r\n        {\r\n            \"id\": \"1234567890\",\r\n            \"type\": \"Credit\",\r\n            \"amount\": \"16000\",\r\n            \"installments\": \"12\",\r\n            \"each\": \"1333\"\r\n        }\r\n    ],\r\n    \"reminders\": [],\r\n    \"activityLog\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/student",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add New Student",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"123456781\",\r\n    \"name\": \"Peter\",\r\n    \"surname\": \"John\",\r\n    \"phoneNumber\": \"0000000000\",\r\n    \"email\": \"12345@mail.com\",\r\n    \"place\": \"Rehovot\",\r\n    \"course\": \"FSD\",\r\n    \"status\": \"STUDENT\",\r\n    \"source\": \"ADS\",\r\n    \"groups\": [\r\n        \"java52\"\r\n    ],\r\n    \"comments\": [\r\n        {\r\n            \"date\": \"2024-06-18T15:30:45\",\r\n            \"text\": \"pay for course\",\r\n            \"author\": \"ElenaDev\"\r\n        }\r\n    ],\r\n    \"paymentLog\": [\r\n        {\r\n            \"id\": \"1234567890\",\r\n            \"studentId\": \"test\",\r\n            \"timestamp\": \"2024-07-18T15:30:45\",\r\n            \"paymentType\": \"CREDIT_CARD\",\r\n            \"amount\": \"16000\",\r\n            \"installments\": \"12\",\r\n            \"each\": \"1333\",\r\n            \"authorId\": \"ElenaDev\",\r\n            \"details\": \"test\"\r\n        }\r\n    ],\r\n    \"reminders\": []\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/student",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"student"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 18 Aug 2024 18:03:31 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"source\": null,\n    \"status\": \"STUDENT\",\n    \"comments\": [\n        {\n            \"date\": \"2024-06-18T15:30:45\",\n            \"text\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }\n    ],\n    \"reminders\": [],\n    \"id\": \"123456781\",\n    \"groups\": [\n        \"java52\"\n    ],\n    \"activityLog\": null,\n    \"coursePrice\": 16000,\n    \"paidSum\": 16000,\n    \"documents\": false,\n    \"paymentLog\": [\n        {\n            \"id\": \"1234567890\",\n            \"studentId\": \"test\",\n            \"timestamp\": null,\n            \"paymentType\": \"CREDIT_CARD\",\n            \"amount\": 16000,\n            \"installments\": 12,\n            \"each\": 1333,\n            \"authorId\": \"ElenaDev\",\n            \"details\": \"test\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Find/Read",
+					"item": [
+						{
+							"name": "Get Student By Id",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "ElenaDev",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student/{{email}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"{{email}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Student By Id",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Basic kjnierbibbr",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/student/123456789",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"student",
+												"123456789"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"123456789\",\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phone\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"city\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"group\": \"java52\",\n    \"reminder\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\"\n        }\n    ],\n    \"comment\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }\n    ],\n    \"payment\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ],\n    \"activity log\": [\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        },\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"comment\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get All Students",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "ElenaDev",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Students",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/student",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"student"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 05 Aug 2024 23:16:55 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 123456789,\n        \"name\": \"Peter\",\n        \"surname\": \"John\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"12345@mail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": null,\n        \"comments\": [\n            {\n                \"date\": \"2024-07-30T15:11:24.811\",\n                \"text\": \"pay for course\",\n                \"author\": \"ElenaDev\"\n            }\n        ],\n        \"groups\": [\n            \"java52\"\n        ],\n        \"reminders\": [],\n        \"activityLog\": [],\n        \"coursePrice\": 0,\n        \"paidSum\": 0,\n        \"paymentLog\": []\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Find Students By Name",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "ElenaDev",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student/name/John",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"name",
+										"John"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Find Students By Name",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Basic kvelibvlibilrbtb",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/students/name/Peter",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"students",
+												"name",
+												"Peter"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n    \"studentId\": \"123456789\",\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"groups\": [\n        \"java52\"\n    ],\n    \"comments\": [{\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }],\n    \"paymentLog\": [\n        {\n            \"id\": \"1234567890\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ],\n    \"activity log\": {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        },\n    \"reminders\": [],\n    \"status\":\"STUDENT\"\n},\n     {\n    \"studentId\": \"123456789\",\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"groups\": [\n        \"java52\"\n    ],\n    \"comments\": [{\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }],\n    \"paymentLog\": [\n        {\n            \"id\": \"1234567890\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ],\n    \"activity log\": {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        },\n    \"reminders\": [],\n    \"status\":\"STUDENT\"\n},\n     {\n    \"studentId\": \"123456789\",\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"groups\": [\n        \"java52\"\n    ],\n    \"comments\": [{\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }],\n    \"paymentLog\": [\n        {\n            \"id\": \"1234567890\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ],\n    \"activity log\": {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        },\n    \"reminders\": [],\n    \"status\":\"STUDENT\"\n}\n    \n]"
+								}
+							]
+						},
+						{
+							"name": "Find Students By Last Name",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "ElenaDev",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student/surname/Parker",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"surname",
+										"Parker"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Find Students By Last Name",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Basic bvierbivubritb",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/students/surname/Parker",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"students",
+												"surname",
+												"Parker"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"123456789\",\n        \"name\": \"Peter\",\n        \"surname\": \"John\",\n        \"phone\": \"0000000000\",\n        \"email\": \"12345@mail.com\",\n        \"city\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"group\": \"java52\",\n        \"comment\": {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        },\n        \"payment\": {\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        },\n        \"activity log\": {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        }\n    },\n    {\n        \"id\": \"123456789\",\n        \"name\": \"Peter\",\n        \"surname\": \"John\",\n        \"phone\": \"0000000000\",\n        \"email\": \"12345@mail.com\",\n        \"city\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"group\": \"java52\",\n        \"comment\": {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        },\n        \"payment\": {\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        },\n        \"activity log\": {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        }\n    },\n    {\n        \"id\": \"123456789\",\n        \"name\": \"Peter\",\n        \"surname\": \"John\",\n        \"phone\": \"0000000000\",\n        \"email\": \"12345@mail.com\",\n        \"city\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"group\": \"java52\",\n        \"comment\": {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        },\n        \"payment\": {\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        },\n        \"activity log\": {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        }\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Find Students By Group",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "ElenaDev",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student/group/{{group}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"group",
+										"{{group}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Find Students By Group",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Basic jvneobooubub",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/students/group/Java-52",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"students",
+												"group",
+												"Java-52"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\r\n    {\r\n    \"studentId\": \"123456789\",\r\n    \"name\": \"Peter\",\r\n    \"surname\": \"John\",\r\n    \"phoneNumber\": \"0000000000\",\r\n    \"email\": \"12345@mail.com\",\r\n    \"place\": \"Rehovot\",\r\n    \"course\": \"FSD\",\r\n    \"groups\": [\r\n        \"java52\"\r\n    ],\r\n    \"comments\": [],\r\n    \"paymentLog\": [\r\n        {\r\n            \"id\": \"1234567890\",\r\n            \"type\": \"Credit\",\r\n            \"amount\": \"16000\",\r\n            \"installments\": \"12\",\r\n            \"each\": \"1333\"\r\n        }\r\n    ],\r\n    \"reminders\": [],\r\n    \"status\":\"STUDENT\"\r\n},\r\n    {\r\n    \"studentId\": \"123456789\",\r\n    \"name\": \"Peter\",\r\n    \"surname\": \"John\",\r\n    \"phoneNumber\": \"0000000000\",\r\n    \"email\": \"12345@mail.com\",\r\n    \"place\": \"Rehovot\",\r\n    \"course\": \"FSD\",\r\n    \"groups\": [\r\n        \"java52\"\r\n    ],\r\n    \"comments\": [],\r\n    \"paymentLog\": [\r\n        {\r\n            \"id\": \"1234567890\",\r\n            \"type\": \"Credit\",\r\n            \"amount\": \"16000\",\r\n            \"installments\": \"12\",\r\n            \"each\": \"1333\"\r\n        }\r\n    ],\r\n    \"reminders\": [],\r\n    \"status\":\"STUDENT\"\r\n},\r\n    {\r\n    \"studentId\": \"123456789\",\r\n    \"name\": \"Peter\",\r\n    \"surname\": \"John\",\r\n    \"phoneNumber\": \"0000000000\",\r\n    \"email\": \"12345@mail.com\",\r\n    \"place\": \"Rehovot\",\r\n    \"course\": \"FSD\",\r\n    \"groups\": [\r\n        \"java52\"\r\n    ],\r\n    \"comments\": [],\r\n    \"paymentLog\": [\r\n        {\r\n            \"id\": \"1234567890\",\r\n            \"type\": \"Credit\",\r\n            \"amount\": \"16000\",\r\n            \"installments\": \"12\",\r\n            \"each\": \"1333\"\r\n        }\r\n    ],\r\n    \"reminders\": [],\r\n    \"status\":\"STUDENT\"\r\n}\r\n    \r\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"item": [
+						{
+							"name": "Update Student By Id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phoneNumber\": \"999999999\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/student/{{email}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"{{email}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Student By Id",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"phone\": {{phone}}\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/student/123456789",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"student",
+												"123456789"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"123456789\",\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phone\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"city\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"group\": \"java52\",\n    \"reminder\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\"\n        }\n    ],\n    \"comment\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }\n    ],\n    \"payment\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ],\n    \"activity log\": [\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        },\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"comment\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Add Reminder to Student",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "ElenaDev",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\n            \"dateRemind\": \"2025-08-16T18:01:22.114\",\n            \"text\": \"pay for course\",\n            \"author\": \"antondev\"\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/student/123@mail.com/reminder",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"123@mail.com",
+										"reminder"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add Reminder to Student",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Basic jhbvfoiauebrvoia",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"date\": \"2024-07-16\",\n    \"massage\": \"pay for course\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/student/123456789/reminder",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"student",
+												"123456789",
+												"reminder"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"date\": \"2024-07-16\",\n    \"massage\": \"pay for course\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Comment in Student",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "ElenaDev",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\",\n\t\"message\":\"woof-woof\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/student/{{id}}/comment/{{commentNumber}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"{{id}}",
+										"comment",
+										"{{commentNumber}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Comment in Student",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\",\n\t\"message\":\"woof-woof\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/student/{{id}}/comment",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"student",
+												"{{id}}",
+												"comment"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\",\n\t\"message\":\"woof-woof\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "Remove Student by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student/{{email}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"{{email}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Remove Student",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/student/10000",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"student",
+												"10000"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"123456789\",\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phone\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"city\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"group\": \"java52\",\n    \"reminder\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\"\n        }\n    ],\n    \"comment\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }\n    ],\n    \"payment\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ],\n    \"activity log\": [\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        },\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"comment\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Comment From Student",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "ElenaDev",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/student/{{id}}/comment/{{commentNumber}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"{{id}}",
+										"comment",
+										"{{commentNumber}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Comment to Student",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Basic jnvliuhbrsltiyvhbrotsiu",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/student/{{id}}/comment",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"student",
+												"{{id}}",
+												"comment"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\",\n\t\"message\": \"tralala\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Reminder From Student",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "ElenaDev",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/student/{{id}}/reminder/{{commentNumber}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"{{id}}",
+										"reminder",
+										"{{commentNumber}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete  Comment to Student",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Basic jnvliuhbrsltiyvhbrotsiu",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/student/{{id}}/reminder",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"student",
+												"{{id}}",
+												"reminder"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n\t\"date\": \"2024-05-05\",\n\t\"message\": \"tralala\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "Add new contact",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"123456783\",\r\n    \"name\": \"Peter\",\r\n    \"surname\": \"Parker\",\r\n    \"phoneNumber\": \"0000000000\",\r\n    \"email\": \"000@mail.com\",\r\n    \"place\": \"Rehovot\",\r\n    \"course\": \"QA\",\r\n    \"source\": \"ADS\",\r\n    \"status\": \"Lead\",\r\n    \"comments\": \"Closed on Friday\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/contact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contact"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add new contact",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Peter\",\r\n    \"surname\": \"Parker\",\r\n    \"phoneNumber\": \"0000000000\",\r\n    \"email\": \"4@mail.com\",\r\n    \"place\": \"Rehovot\",\r\n    \"course\": \"QA\",\r\n    \"source\": \"ADS\",\r\n    \"status\": \"LEAD\",\r\n    \"comments\": [\r\n        {\r\n            \"text\": \"Closed on Friday\",\r\n            \"author\": \"ElenaDev\"\r\n        }\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/contact",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"contact"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 19 Aug 2024 13:30:53 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"123456783\",\n    \"name\": \"Peter\",\n    \"surname\": \"Parker\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"000@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"QA\",\n    \"source\": \"ADS\",\n    \"status\": \"Lead\",\n    \"comments\": \"Closed on Friday\",\n    \"reminders\": []\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Find/Read",
+					"item": [
+						{
+							"name": "Get all contacts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/contact/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contact",
+										"all"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get all contacts",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/contact/all",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"contact",
+												"all"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 19 Aug 2024 13:49:15 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    },\n        {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Find contact by name",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/contact/name/{{name}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contact",
+										"name",
+										"{{name}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Find contact by name",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/contact/name/{{name}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"contact",
+												"name",
+												"{{name}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 19 Aug 2024 13:51:03 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Find contact  by lastname",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/contact/lastName/{{lastName}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contact",
+										"lastName",
+										"{{lastName}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Find contact  by lastname",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/contact/lastName/{{lastName}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"contact",
+												"lastName",
+												"{{lastName}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 19 Aug 2024 13:55:51 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Get by status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/contact/status/{{status}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contact",
+										"status",
+										"{{status}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get By Status",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/contact/status/{{status}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"contact",
+												"status",
+												"{{status}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 19 Aug 2024 13:38:09 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    },\n    {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Find contact by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/contact/{{id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contact",
+										"{{id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Find contact by id",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/contact/{{id}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"contact",
+												"{{id}}"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"item": [
+						{
+							"name": "Update Contact By Id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"123456783\",\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phone\": \"0000000789\",\n    \"email\": \"12345@mail.com\",\n    \"city\": \"Rehovot\",\n    \"course\": \"QA\",\n    \"source\": \"INSTAGRAM\",\n    \"status\": \"IN_WORK\",\n    \"comment\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"Clossed on Fraiday\",\n            \"author\": \"ElenaDev\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/contact/{{id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contact",
+										"{{id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Contact By Id",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test_new\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/contact/{{id}}",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"contact",
+												"{{id}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test_new\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Add/Update comment in contact",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "ElenaDev",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \n    \"comments\": \"Closed on Friday\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/contact/{{id}}/comment",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contact",
+										"{{id}}",
+										"comment"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add/Update comment in contact",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{ \n    \"comments\": \"Closed on Friday\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/contact/{{id}}/comment",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"contact",
+												"{{id}}",
+												"comment"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"Peter\",\n    \"surname\": \"Parker\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"000@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"QA\",\n    \"source\": \"ADS\",\n    \"status\": \"Lead\",\n    \"comments\": \"Closed on Friday\",\n    \"reminders\": []\n}"
+								}
+							]
+						},
+						{
+							"name": "Add reminder to contact",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"reminderTime\": \"2024-07-26T22:50:00\",\n    \"reminderText\": \"Напомнить group про встречу\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{{baseUrl}}/contact/{{id}}/reminder",
+									"host": [
+										"{{{baseUrl}}"
+									],
+									"path": [
+										"contact",
+										"{{id}}",
+										"reminder"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add reminder to contact",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Basic jhbvfoiauebrvoia",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"reminderTime\": \"2024-07-26T22:50:00\",\n    \"reminderText\": \"Напомнить group про встречу\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{{baseUrl}}/contact/{{id}}/reminder",
+											"host": [
+												"{{{baseUrl}}"
+											],
+											"path": [
+												"contact",
+												"{{id}}",
+												"reminder"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"Peter\",\n    \"surname\": \"Parker\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"000@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"QA\",\n    \"source\": \"ADS\",\n    \"status\": \"Lead\",\n    \"comments\": \"Closed on Friday\",\n    \"reminders\": [ {\n        \"reminderTime\": \"2024-07-26T22:50:00\",\n        \"reminderText\": \"Напомнить group про встречу\" \n    }]\n}"
+								}
+							]
+						},
+						{
+							"name": "Archive contact",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/contact/{{id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contact",
+										"{{id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Archive contact",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/contact/{{id}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"contact",
+												"{{id}}"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "true"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "Remove contact",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/contact/{{id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contact",
+										"{{id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Remove Contact",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/contact/{{id}}",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"contact",
+												"{{id}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phone\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"city\": \"Rehovot\",\n    \"course\": \"Programming\",\n    \"source\": \"Interner\",\n    \"reminder\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"call to info\"\n        }\n    ],\n    \"comment\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"Clossed on Fraiday\",\n            \"author\": \"ElenaDev\"\n        }\n    ],\n    \"activity log\": [\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Groups",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "Add new group",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add new group",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\n        \"MONDAY\",\n        \"TUESDAY\"\n    ],\n    \"webinarsDays\": [\n        \"WEDNESDAY\",\n        \"FRIDAY\"\n    ],\n    \"studentsID\": [\n        34,\n        2,\n        56\n    ],\n    \"reminders\": []\n}"
+								}
+							]
+						},
+						{
+							"name": "Add reminder",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"reminderTime\": \"2024-07-26T22:50:00\",\r\n    \"reminderText\": \"Напомнить group про встречу\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/{{group}}/reminder",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"{{group}}",
+										"reminder"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add reminder",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"reminderTime\": \"2024-07-26T22:50:00\",\r\n    \"reminderText\": \"Напомнить group про встречу\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/{{group}}/reminder",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"{{group}}",
+												"reminder"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\n        \"MONDAY\",\n        \"TUESDAY\"\n    ],\n    \"webinarsDays\": [\n        \"WEDNESDAY\",\n        \"FRIDAY\"\n    ],\n    \"studentsID\": [\n        34,\n        2,\n        56\n    ],\n    \"reminders\": [{\n        \"reminderTime\": \"2024-07-26T22:50:00\",\n        \"reminderText\": \"Напомнить group про встречу\"\n    }]\n    \n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Find/Read",
+					"item": [
+						{
+							"name": "Find group by id",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/group/{{group}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"{{group}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Find group by id",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/group/{{group}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"{{group}}"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56],\n    \"reminders\": [],\n    \"active\": true,\n    \"autoArchive\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "Get all groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/groups",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"groups"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get all groups",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Basic jnvkrjnbornb",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/groups",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"groups"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56],\n    \"reminders\": [],\n    \"active\": true,\n    \"autoArchive\": false\n    },\n    {\n    \"id\": \"java62\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56],\n    \"reminders\": [],\n    \"active\": true,\n    \"autoArchive\": false\n    }   \n    \n    \n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"item": [
+						{
+							"name": "Update group by id",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "ElenaDev",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/{{group}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"{{group}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update group by id",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/{{group}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"{{group}}"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56]\n}"
+								}
+							]
+						},
+						{
+							"name": "Add students to group",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    2324324, \n    3443434,\n    557567\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/group/{{group}}/students",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"{{group}}",
+										"students"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add student to group",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\n    2324324, \n    3443434,\n    557567\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/group/{{group}}/students",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"{{group}}",
+												"students"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\n        \"MONDAY\",\n        \"TUESDAY\"\n    ],\n    \"webinarsDays\": [\n        \"WEDNESDAY\",\n        \"FRIDAY\"\n    ],\n    \"studentsID\": [\n        34,\n        2,\n        56,\n        2324324, \n        3443434,\n        557567\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Move student",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}group/{{group}}/student/{{id}}/group/{{groupNew}}",
+									"host": [
+										"{{baseUrl}}group"
+									],
+									"path": [
+										"{{group}}",
+										"student",
+										"{{id}}",
+										"group",
+										"{{groupNew}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Move student",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}group/{{group}}/student/{{id}}/group/{{groupNew}}",
+											"host": [
+												"{{baseUrl}}group"
+											],
+											"path": [
+												"{{group}}",
+												"student",
+												"{{id}}",
+												"group",
+												"{{groupNew}}"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"java53\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\n        \"MONDAY\",\n        \"TUESDAY\"\n    ],\n    \"webinarsDays\": [\n        \"WEDNESDAY\",\n        \"FRIDAY\"\n    ],\n    \"studentsID\": [\n        34,\n        2,\n        56,\n        2324324,\n        3443434,\n        557567\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "Archive group",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/group/{{groupId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"{{groupId}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Archive group",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/group/{{groupId}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"{{groupId}}"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56],\n    \"archive\" : true\n}"
+								}
+							]
+						},
+						{
+							"name": "Remove student from group",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/group/{{groupId}}}/student/{{id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"group",
+										"{{groupId}}}",
+										"student",
+										"{{id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Remove Student from Group",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/group/{{groupId}}}/student/{{id}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"group",
+												"{{groupId}}}",
+												"student",
+												"{{id}}"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 56],\n    \"archive\" : false\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Enums",
+			"item": [
+				{
+					"name": "Status contact",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/enums/{{enumName}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"enums",
+								"{{enumName}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Status contact",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/enums/status",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"enums",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Lead\",\n    \"In work\",\n    \"Consultation\",\n    \"Save for later\",\n    \"Student\",\n    \"Archive\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Course",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/enums/{{enumName}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"enums",
+								"{{enumName}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Course",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/enums/course",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"enums",
+										"course"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"FSD\",\n    \"QAT\",\n    \"BP\",\n    \"JT\",\n    \"WD\",\n    \"AT\",\n    \"EN\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Payment type",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/enums/paymentType",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"enums",
+								"paymentType"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Payment type",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/enums/paymentType",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"enums",
+										"paymentType"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Cash\",\n    \"Credit\",\n    \"Check\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Source",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/enums/source",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"enums",
+								"source"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Source",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/enums/source",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"enums",
+										"source"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"ADS\",\n    \"Friend\",\n    \"Study\",\n    \"Internet(advertising)\"\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Add payment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"Credit\",\n    \"amount\": \"16000\",\n    \"installments\": \"12\",\n    \"each\": \"1333\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/student{{id}}/payment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"student{{id}}",
+								"payment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add payment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic jnvebivrtby",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"Credit\",\n    \"amount\": \"16000\",\n    \"installments\": \"12\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/student/{{id}}/payment",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"{{id}}",
+										"payment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"studentId\":\"sara@mail.com\", \n    \"date\": \"2024-07-16\",\n    \"type\": \"Credit\",\n    \"amount\": \"16000\",\n    \"installments\": \"12\",\n    \"each\": \"1333\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update payment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"Credit\",\r\n    \"amount\": \"16000\",\r\n    \"installments\": \"12\",\r\n    \"each\": \"1333\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/student/{{id}}/payment/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"student",
+								"{{id}}",
+								"payment",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update payment",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "basic fjdvdv55ruytt",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"1234\",\r\n    \"type\": \"Credit\",\r\n    \"amount\": \"16000\",\r\n    \"installments\": \"12\",\r\n    \"each\": \"1333\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/student/{{id}}/payment",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"{{id}}",
+										"payment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"studentId\":\"sara@mail.com\", \r\n    \"date\": \"2024-07-16\",\r\n    \"type\": \"Credit\",\r\n    \"amount\": \"16000\",\r\n    \"installments\": \"12\",\r\n    \"each\": \"1333\"\r\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "studentsPerPage",
+			"value": "5"
+		},
+		{
+			"key": "page",
+			"value": "1"
+		},
+		{
+			"key": "enumName",
+			"value": "status"
+		},
+		{
+			"key": "name",
+			"value": "Peter"
+		},
+		{
+			"key": "lastName",
+			"value": "Parker"
+		},
+		{
+			"key": "group",
+			"value": "Java-89"
+		},
+		{
+			"key": "status",
+			"value": "In work"
+		},
+		{
+			"key": "id",
+			"value": "123456789"
+		},
+		{
+			"key": "id2",
+			"value": "20000",
+			"type": "string"
+		},
+		{
+			"key": "city",
+			"value": "Rehovot"
+		},
+		{
+			"key": "groupsPerPage",
+			"value": "20"
+		},
+		{
+			"key": "groupId",
+			"value": "1000",
+			"type": "string"
+		},
+		{
+			"key": "link",
+			"value": "\"www.google.com\"",
+			"type": "string"
+		},
+		{
+			"key": "coursePrice",
+			"value": "20000",
+			"type": "string"
+		},
+		{
+			"key": "course",
+			"value": "Math",
+			"type": "string"
+		},
+		{
+			"key": "paymentId",
+			"value": "paymentId"
+		},
+		{
+			"key": "userId",
+			"value": "1234567890"
+		},
+		{
+			"key": "email",
+			"value": "12345@mail.com",
+			"type": "string"
+		},
+		{
+			"key": "commentNumber",
+			"value": "0"
+		},
+		{
+			"key": "groupName",
+			"value": "BP-96"
+		},
+		{
+			"key": "groupNew",
+			"value": "Java-53"
+		}
+	]
+}
