@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "ed91b830-1892-4648-b85a-3776eea72414",
+		"_postman_id": "d34c4b54-2968-4d8a-9712-d3199781da5a",
 		"name": "EduTrek Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37331405"
+		"_exporter_id": "25163819",
+		"_collection_link": "https://speeding-trinity-974808.postman.co/workspace/Team-Workspace~49aa6b45-0069-4eca-8916-802aa0a5a551/collection/25163819-d34c4b54-2968-4d8a-9712-d3199781da5a?action=share&source=collection_link&creator=25163819"
 	},
 	"item": [
 		{
@@ -90,7 +91,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"source\": null,\n    \"status\": \"STUDENT\",\n    \"comments\": [\n        {\n            \"date\": \"2024-06-18T15:30:45\",\n            \"text\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }\n    ],\n    \"reminders\": [],\n    \"id\": \"123456781\",\n    \"groups\": [\n        \"java52\"\n    ],\n    \"activityLog\": null,\n    \"coursePrice\": 16000,\n    \"paidSum\": 16000,\n    \"documents\": false,\n    \"paymentLog\": [\n        {\n            \"id\": \"1234567890\",\n            \"studentId\": \"test\",\n            \"timestamp\": null,\n            \"paymentType\": \"CREDIT_CARD\",\n            \"amount\": 16000,\n            \"installments\": 12,\n            \"each\": 1333,\n            \"authorId\": \"ElenaDev\",\n            \"details\": \"test\"\n        }\n    ]\n}"
+									"body": "{   \n    \"id\": \"123456783\",\n    \"name\": \"Peter\",\n    \"surname\": \"Parker\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"000@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"QA\",\n    \"source\": \"ADS\",\n    \"status\": \"Student\",\n    \"comments\": \"payment on Friday\",\n    \"reminders\": [],      \n    \"groups\": [\"java52\"],\n    \"coursePrice\": 16000,\n    \"paidSum\": [],\n    \"paymentLog\": []\n}"
 								}
 							]
 						}
@@ -167,7 +168,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": \"123456789\",\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phone\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"city\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"group\": \"java52\",\n    \"reminder\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\"\n        }\n    ],\n    \"comment\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }\n    ],\n    \"payment\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ],\n    \"activity log\": [\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        },\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"comment\"\n        }\n    ]\n}"
+									"body": "{\n   \"id\": \"123456783\",\n    \"name\": \"Peter\",\n    \"surname\": \"Parker\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"000@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"QA\",\n    \"source\": \"ADS\",\n    \"status\": \"Student\",\n    \"comments\": \"12.07.2024, Student created, 12.08.2024 payment\",\n    \"reminders\": [\n        {\n            \"reminderTime\": \"2024-07-26T22:50:00\",\n            \"reminderText\": \"Напомнить group про встречу\" \n        }\n    ],\n   \n    \"groups\": [\"java52\"],\n    \"paymentLog\":[\n            {\n                \"date\": \"2024-07-16\",\n                \"massage\": \"pay for course\",\n                \"author\": \"ElenaDev\"\n            }\n        ],    \n    \"paidSum\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ]         \n}"
 								}
 							]
 						},
@@ -208,14 +209,14 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://localhost:8080/student",
+											"raw": "http://localhost:8080/students",
 											"protocol": "http",
 											"host": [
 												"localhost"
 											],
 											"port": "8080",
 											"path": [
-												"student"
+												"students"
 											]
 										}
 									},
@@ -245,7 +246,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n    {\n        \"id\": 123456789,\n        \"name\": \"Peter\",\n        \"surname\": \"John\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"12345@mail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": null,\n        \"comments\": [\n            {\n                \"date\": \"2024-07-30T15:11:24.811\",\n                \"text\": \"pay for course\",\n                \"author\": \"ElenaDev\"\n            }\n        ],\n        \"groups\": [\n            \"java52\"\n        ],\n        \"reminders\": [],\n        \"activityLog\": [],\n        \"coursePrice\": 0,\n        \"paidSum\": 0,\n        \"paymentLog\": []\n    }\n]"
+									"body": "[\n   {\n   \"id\": \"123456783\",\n    \"name\": \"Peter\",\n    \"surname\": \"Parker\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"000@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"QA\",\n    \"source\": \"ADS\",\n    \"status\": \"Student\",\n    \"comments\": \"12.07.2024, Student created, 12.08.2024 payment\",\n    \"reminders\": [\n        {\n            \"reminderTime\": \"2024-07-26T22:50:00\",\n            \"reminderText\": \"Напомнить group про встречу\" \n        }\n    ],\n   \n    \"groups\": [\"java52\"],\n    \"paymentLog\":[\n            {\n                \"date\": \"2024-07-16\",\n                \"massage\": \"pay for course\",\n                \"author\": \"ElenaDev\"\n            }\n        ],    \n    \"paidSum\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ]         \n},\n{\n   \"id\": \"0000001\",\n    \"name\": \"Sem\",\n    \"surname\": \"Kruger\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"000@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"source\": \"ADS\",\n    \"status\": \"Student\",\n    \"comments\": \"12.07.2024, Student created, 12.08.2024 payment\",\n    \"reminders\": [\n        {\n            \"reminderTime\": \"2024-07-26T22:50:00\",\n            \"reminderText\": \"Напомнить group про встречу\" \n        }\n    ],\n   \n    \"groups\": [\"java52\"],\n    \"paymentLog\":[\n            {\n                \"date\": \"2024-07-16\",\n                \"massage\": \"pay for course\",\n                \"author\": \"ElenaDev\"\n            }\n        ],    \n    \"paidSum\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ]         \n}\n]"
 								}
 							]
 						},
@@ -319,81 +320,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n    {\n    \"studentId\": \"123456789\",\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"groups\": [\n        \"java52\"\n    ],\n    \"comments\": [{\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }],\n    \"paymentLog\": [\n        {\n            \"id\": \"1234567890\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ],\n    \"activity log\": {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        },\n    \"reminders\": [],\n    \"status\":\"STUDENT\"\n},\n     {\n    \"studentId\": \"123456789\",\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"groups\": [\n        \"java52\"\n    ],\n    \"comments\": [{\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }],\n    \"paymentLog\": [\n        {\n            \"id\": \"1234567890\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ],\n    \"activity log\": {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        },\n    \"reminders\": [],\n    \"status\":\"STUDENT\"\n},\n     {\n    \"studentId\": \"123456789\",\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"groups\": [\n        \"java52\"\n    ],\n    \"comments\": [{\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }],\n    \"paymentLog\": [\n        {\n            \"id\": \"1234567890\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ],\n    \"activity log\": {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        },\n    \"reminders\": [],\n    \"status\":\"STUDENT\"\n}\n    \n]"
-								}
-							]
-						},
-						{
-							"name": "Find Students By Last Name",
-							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "username",
-											"value": "ElenaDev",
-											"type": "string"
-										},
-										{
-											"key": "password",
-											"value": "1234",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/student/surname/Parker",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"student",
-										"surname",
-										"Parker"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Find Students By Last Name",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Basic bvierbivubritb",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "http://localhost:8080/students/surname/Parker",
-											"protocol": "http",
-											"host": [
-												"localhost"
-											],
-											"port": "8080",
-											"path": [
-												"students",
-												"surname",
-												"Parker"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "[\n    {\n        \"id\": \"123456789\",\n        \"name\": \"Peter\",\n        \"surname\": \"John\",\n        \"phone\": \"0000000000\",\n        \"email\": \"12345@mail.com\",\n        \"city\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"group\": \"java52\",\n        \"comment\": {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        },\n        \"payment\": {\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        },\n        \"activity log\": {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        }\n    },\n    {\n        \"id\": \"123456789\",\n        \"name\": \"Peter\",\n        \"surname\": \"John\",\n        \"phone\": \"0000000000\",\n        \"email\": \"12345@mail.com\",\n        \"city\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"group\": \"java52\",\n        \"comment\": {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        },\n        \"payment\": {\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        },\n        \"activity log\": {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        }\n    },\n    {\n        \"id\": \"123456789\",\n        \"name\": \"Peter\",\n        \"surname\": \"John\",\n        \"phone\": \"0000000000\",\n        \"email\": \"12345@mail.com\",\n        \"city\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"group\": \"java52\",\n        \"comment\": {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        },\n        \"payment\": {\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        },\n        \"activity log\": {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        }\n    }\n]"
+									"body": "[\n    {\n   \"id\": \"123456783\",\n    \"name\": \"Peter\",\n    \"surname\": \"Parker\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"000@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"QA\",\n    \"source\": \"ADS\",\n    \"status\": \"Student\",\n    \"comments\": \"12.07.2024, Student created, 12.08.2024 payment\",\n    \"reminders\": [\n        {\n            \"reminderTime\": \"2024-07-26T22:50:00\",\n            \"reminderText\": \"Напомнить group про встречу\" \n        }\n    ],\n   \n    \"groups\": [\"java52\"],\n    \"paymentLog\":[\n            {\n                \"date\": \"2024-07-16\",\n                \"massage\": \"pay for course\",\n                \"author\": \"ElenaDev\"\n            }\n        ],    \n    \"paidSum\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ]         \n},\n{\n   \"id\": \"0000002\",\n    \"name\": \"Peter\",\n    \"surname\": \"Kruger\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"000@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"QA\",\n    \"source\": \"ADS\",\n    \"status\": \"Student\",\n    \"comments\": \"12.07.2024, Student created, 12.08.2024 payment\",\n    \"reminders\": [\n        {\n            \"reminderTime\": \"2024-07-26T22:50:00\",\n            \"reminderText\": \"Напомнить group про встречу\" \n        }\n    ],\n   \n    \"groups\": [\"java52\"],\n    \"paymentLog\":[\n            {\n                \"date\": \"2024-07-16\",\n                \"massage\": \"pay for course\",\n                \"author\": \"ElenaDev\"\n            }\n        ],    \n    \"paidSum\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ]         \n}\n    \n]"
 								}
 							]
 						},
@@ -467,7 +394,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\r\n    {\r\n    \"studentId\": \"123456789\",\r\n    \"name\": \"Peter\",\r\n    \"surname\": \"John\",\r\n    \"phoneNumber\": \"0000000000\",\r\n    \"email\": \"12345@mail.com\",\r\n    \"place\": \"Rehovot\",\r\n    \"course\": \"FSD\",\r\n    \"groups\": [\r\n        \"java52\"\r\n    ],\r\n    \"comments\": [],\r\n    \"paymentLog\": [\r\n        {\r\n            \"id\": \"1234567890\",\r\n            \"type\": \"Credit\",\r\n            \"amount\": \"16000\",\r\n            \"installments\": \"12\",\r\n            \"each\": \"1333\"\r\n        }\r\n    ],\r\n    \"reminders\": [],\r\n    \"status\":\"STUDENT\"\r\n},\r\n    {\r\n    \"studentId\": \"123456789\",\r\n    \"name\": \"Peter\",\r\n    \"surname\": \"John\",\r\n    \"phoneNumber\": \"0000000000\",\r\n    \"email\": \"12345@mail.com\",\r\n    \"place\": \"Rehovot\",\r\n    \"course\": \"FSD\",\r\n    \"groups\": [\r\n        \"java52\"\r\n    ],\r\n    \"comments\": [],\r\n    \"paymentLog\": [\r\n        {\r\n            \"id\": \"1234567890\",\r\n            \"type\": \"Credit\",\r\n            \"amount\": \"16000\",\r\n            \"installments\": \"12\",\r\n            \"each\": \"1333\"\r\n        }\r\n    ],\r\n    \"reminders\": [],\r\n    \"status\":\"STUDENT\"\r\n},\r\n    {\r\n    \"studentId\": \"123456789\",\r\n    \"name\": \"Peter\",\r\n    \"surname\": \"John\",\r\n    \"phoneNumber\": \"0000000000\",\r\n    \"email\": \"12345@mail.com\",\r\n    \"place\": \"Rehovot\",\r\n    \"course\": \"FSD\",\r\n    \"groups\": [\r\n        \"java52\"\r\n    ],\r\n    \"comments\": [],\r\n    \"paymentLog\": [\r\n        {\r\n            \"id\": \"1234567890\",\r\n            \"type\": \"Credit\",\r\n            \"amount\": \"16000\",\r\n            \"installments\": \"12\",\r\n            \"each\": \"1333\"\r\n        }\r\n    ],\r\n    \"reminders\": [],\r\n    \"status\":\"STUDENT\"\r\n}\r\n    \r\n]"
+									"body": "[\r\n   {\r\n   \"id\": \"123456783\",\r\n    \"name\": \"Peter\",\r\n    \"surname\": \"Parker\",\r\n    \"phoneNumber\": \"0000000000\",\r\n    \"email\": \"000@mail.com\",\r\n    \"place\": \"Rehovot\",\r\n    \"course\": \"FSD\",\r\n    \"source\": \"ADS\",\r\n    \"status\": \"Student\",\r\n    \"comments\": \"12.07.2024, Student created, 12.08.2024 payment\",\r\n    \"reminders\": [\r\n        {\r\n            \"reminderTime\": \"2024-07-26T22:50:00\",\r\n            \"reminderText\": \"Напомнить group про встречу\" \r\n        }\r\n    ],\r\n   \r\n    \"groups\": [\"java52\"],\r\n    \"paymentLog\":[\r\n            {\r\n                \"date\": \"2024-07-16\",\r\n                \"massage\": \"pay for course\",\r\n                \"author\": \"ElenaDev\"\r\n            }\r\n        ],    \r\n    \"paidSum\": [\r\n        {\r\n            \"id\": \"87y87876786\",\r\n            \"type\": \"Credit\",\r\n            \"amount\": \"16000\",\r\n            \"installments\": \"12\",\r\n            \"each\": \"1333\"\r\n        }\r\n    ]         \r\n},\r\n{\r\n   \"id\": \"000001\",\r\n    \"name\": \"Sem\",\r\n    \"surname\": \"Kruger\",\r\n    \"phoneNumber\": \"0000000000\",\r\n    \"email\": \"000@mail.com\",\r\n    \"place\": \"Rehovot\",\r\n    \"course\": \"FSD\",\r\n    \"source\": \"ADS\",\r\n    \"status\": \"Student\",\r\n    \"comments\": \"12.07.2024, Student created, 12.08.2024 payment\",\r\n    \"reminders\": [\r\n        {\r\n            \"reminderTime\": \"2024-07-26T22:50:00\",\r\n            \"reminderText\": \"Напомнить group про встречу\" \r\n        }\r\n    ],\r\n   \r\n    \"groups\": [\"java52\"],\r\n    \"paymentLog\":[\r\n            {\r\n                \"date\": \"2024-07-16\",\r\n                \"massage\": \"pay for course\",\r\n                \"author\": \"ElenaDev\"\r\n            }\r\n        ],    \r\n    \"paidSum\": [\r\n        {\r\n            \"id\": \"87y87876786\",\r\n            \"type\": \"Credit\",\r\n            \"amount\": \"16000\",\r\n            \"installments\": \"12\",\r\n            \"each\": \"1333\"\r\n        }\r\n    ]         \r\n}\r\n    \r\n]"
 								}
 							]
 						}
@@ -509,7 +436,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"phone\": {{phone}}\n}",
+											"raw": "{\n    \"phone\": \"0533432060\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -541,186 +468,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": \"123456789\",\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phone\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"city\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"group\": \"java52\",\n    \"reminder\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\"\n        }\n    ],\n    \"comment\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }\n    ],\n    \"payment\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ],\n    \"activity log\": [\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        },\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"comment\"\n        }\n    ]\n}"
-								}
-							]
-						},
-						{
-							"name": "Add Reminder to Student",
-							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "username",
-											"value": "ElenaDev",
-											"type": "string"
-										},
-										{
-											"key": "password",
-											"value": "1234",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "        {\n            \"dateRemind\": \"2025-08-16T18:01:22.114\",\n            \"text\": \"pay for course\",\n            \"author\": \"antondev\"\n        }",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/student/123@mail.com/reminder",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"student",
-										"123@mail.com",
-										"reminder"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Add Reminder to Student",
-									"originalRequest": {
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Basic jhbvfoiauebrvoia",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"date\": \"2024-07-16\",\n    \"massage\": \"pay for course\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "http://localhost:8080/student/123456789/reminder",
-											"protocol": "http",
-											"host": [
-												"localhost"
-											],
-											"port": "8080",
-											"path": [
-												"student",
-												"123456789",
-												"reminder"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"date\": \"2024-07-16\",\n    \"massage\": \"pay for course\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Update Comment in Student",
-							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "username",
-											"value": "ElenaDev",
-											"type": "string"
-										},
-										{
-											"key": "password",
-											"value": "1234",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\",\n\t\"message\":\"woof-woof\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/student/{{id}}/comment/{{commentNumber}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"student",
-										"{{id}}",
-										"comment",
-										"{{commentNumber}}"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Update Comment in Student",
-									"originalRequest": {
-										"method": "PUT",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\",\n\t\"message\":\"woof-woof\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "http://localhost:8080/student/{{id}}/comment",
-											"protocol": "http",
-											"host": [
-												"localhost"
-											],
-											"port": "8080",
-											"path": [
-												"student",
-												"{{id}}",
-												"comment"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\",\n\t\"message\":\"woof-woof\"\n}"
+									"body": "{\n   \"id\": \"123456783\",\n    \"name\": \"Peter\",\n    \"surname\": \"Parker\",\n    \"phoneNumber\": \"0533432060\",\n    \"email\": \"000@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"QA\",\n    \"source\": \"ADS\",\n    \"status\": \"Student\",\n    \"comments\": \"12.07.2024, Student created, 12.08.2024 payment\",\n    \"reminders\": [\n        {\n            \"reminderTime\": \"2024-07-26T22:50:00\",\n            \"reminderText\": \"Напомнить group про встречу\" \n        }\n    ],\n   \n    \"groups\": [\"java52\"],\n    \"paymentLog\":[\n            {\n                \"date\": \"2024-07-16\",\n                \"massage\": \"pay for course\",\n                \"author\": \"ElenaDev\"\n            }\n        ],    \n    \"paidSum\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ]         \n}"
 								}
 							]
 						}
@@ -776,189 +524,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": \"123456789\",\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phone\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"city\": \"Rehovot\",\n    \"course\": \"FSD\",\n    \"group\": \"java52\",\n    \"reminder\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\"\n        }\n    ],\n    \"comment\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\",\n            \"author\": \"ElenaDev\"\n        }\n    ],\n    \"payment\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ],\n    \"activity log\": [\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        },\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"comment\"\n        }\n    ]\n}"
-								}
-							]
-						},
-						{
-							"name": "Delete Comment From Student",
-							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "username",
-											"value": "ElenaDev",
-											"type": "string"
-										},
-										{
-											"key": "password",
-											"value": "1234",
-											"type": "string"
-										}
-									]
-								},
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/student/{{id}}/comment/{{commentNumber}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"student",
-										"{{id}}",
-										"comment",
-										"{{commentNumber}}"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Delete Comment to Student",
-									"originalRequest": {
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Basic jnvliuhbrsltiyvhbrotsiu",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/student/{{id}}/comment",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"student",
-												"{{id}}",
-												"comment"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\",\n\t\"message\": \"tralala\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Delete Reminder From Student",
-							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "username",
-											"value": "ElenaDev",
-											"type": "string"
-										},
-										{
-											"key": "password",
-											"value": "1234",
-											"type": "string"
-										}
-									]
-								},
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"author\": \"ElenaVed\",\n\t\"date\": \"2024-05-05\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/student/{{id}}/reminder/{{commentNumber}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"student",
-										"{{id}}",
-										"reminder",
-										"{{commentNumber}}"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Delete  Comment to Student",
-									"originalRequest": {
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Basic jnvliuhbrsltiyvhbrotsiu",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/student/{{id}}/reminder",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"student",
-												"{{id}}",
-												"reminder"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\n\t\"date\": \"2024-05-05\",\n\t\"message\": \"tralala\"\n}"
+									"body": "{\n     \"id\": \"10000\",\n    \"name\": \"Peter\",\n    \"surname\": \"Parker\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"000@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"QA\",\n    \"source\": \"ADS\",\n    \"status\": \"Archive\",\n    \"comments\": \"12.07.2024, Student created, 12.08.2024 payment\",\n    \"reminder\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"pay for course\"\n        }\n    ],\n   \n    \"groups\": [\"java52\"],\n    \"paymentLog\":[\n            {\n                \"date\": \"2024-07-16\",\n                \"massage\": \"pay for course\",\n                \"author\": \"ElenaDev\"\n            }\n        ],    \n    \"paidSum\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ]         \n}"
 								}
 							]
 						}
@@ -1118,7 +684,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n    {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    },\n        {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]"
+									"body": "[\n    {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": \"ADS\",\n        \"status\": \"Lead\",\n        \"comments\": \"pay for course\",\n        \"reminders\": []\n        \n    },\n       {\n   \"id\": \"123456783\",\n    \"name\": \"Peter\",\n    \"surname\": \"Parker\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"000@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"QA\",\n    \"source\": \"ADS\",\n    \"status\": \"Student\",\n    \"comments\": \"12.07.2024, Student created, 12.08.2024 payment\",\n    \"reminders\": [\n        {\n            \"reminderTime\": \"2024-07-26T22:50:00\",\n            \"reminderText\": \"Напомнить group про встречу\" \n        }\n    ],\n   \n    \"groups\": [\"java52\"],\n    \"paymentLog\":[\n            {\n                \"date\": \"2024-07-16\",\n                \"massage\": \"pay for course\",\n                \"author\": \"ElenaDev\"\n            }\n        ],    \n    \"paidSum\": [\n        {\n            \"id\": \"87y87876786\",\n            \"type\": \"Credit\",\n            \"amount\": \"16000\",\n            \"installments\": \"12\",\n            \"each\": \"1333\"\n        }\n    ]         \n}\n]"
 								}
 							]
 						},
@@ -1183,72 +749,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]"
-								}
-							]
-						},
-						{
-							"name": "Find contact  by lastname",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/contact/lastName/{{lastName}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"contact",
-										"lastName",
-										"{{lastName}}"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Find contact  by lastname",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/contact/lastName/{{lastName}}",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"contact",
-												"lastName",
-												"{{lastName}}"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 19 Aug 2024 13:55:51 GMT"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=60"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										}
-									],
-									"cookie": [],
-									"body": "[\n    {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]"
+									"body": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": \"ADS\",\n        \"status\": \"Lead\",\n        \"comments\": \"pay for course\",\n        \"reminders\": []\n        \n    }\n]"
 								}
 							]
 						},
@@ -1274,7 +775,13 @@
 									"name": "Get By Status",
 									"originalRequest": {
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
 										"url": {
 											"raw": "{{baseUrl}}/contact/status/{{status}}",
 											"host": [
@@ -1313,7 +820,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    },\n    {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]"
+									"body": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": \"ADS\",\n        \"status\": \"Lead\",\n        \"comments\": \"pay for course\",\n        \"reminders\": []\n        \n    },\n    {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": \"ADS\",\n        \"status\": \"Lead\",\n        \"comments\": \"pay for course\",\n        \"reminders\": []\n       \n    }\n]"
 								}
 							]
 						},
@@ -1360,7 +867,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]"
+									"body": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": \"ADS\",\n        \"status\": \"Lead\",\n        \"comments\": \"pay for course\",\n        \"reminders\": []\n       \n    }\n]"
 								}
 							]
 						}
@@ -1402,7 +909,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test_new\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]",
+											"raw": "[\n   {\n        \"id\":\"123456783\",\n        \"phoneNumber\": \"0542305178\"\n        \n    }\n]",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1434,7 +941,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test_new\",\n        \"phoneNumber\": \"0000000000\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"STUDENT\",\n        \"comments\": \"pay for course\",\n        \"reminders\": [],\n        \"groups\": [\n            \"java52\"\n        ]\n    }\n]"
+									"body": "[\n   {\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test_new\",\n        \"phoneNumber\": \"0542305178\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"Lead\",\n        \"comments\": \"pay for course\",\n        \"reminders\": []       \n    }\n]"
 								}
 							]
 						},
@@ -1599,53 +1106,6 @@
 									"body": "{\n    \"name\": \"Peter\",\n    \"surname\": \"Parker\",\n    \"phoneNumber\": \"0000000000\",\n    \"email\": \"000@mail.com\",\n    \"place\": \"Rehovot\",\n    \"course\": \"QA\",\n    \"source\": \"ADS\",\n    \"status\": \"Lead\",\n    \"comments\": \"Closed on Friday\",\n    \"reminders\": [ {\n        \"reminderTime\": \"2024-07-26T22:50:00\",\n        \"reminderText\": \"Напомнить group про встречу\" \n    }]\n}"
 								}
 							]
-						},
-						{
-							"name": "Archive contact",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/contact/{{id}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"contact",
-										"{{id}}"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Archive contact",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/contact/{{id}}",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"contact",
-												"{{id}}"
-											]
-										}
-									},
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "true"
-								}
-							]
 						}
 					]
 				},
@@ -1673,7 +1133,22 @@
 									"name": "Remove Contact",
 									"originalRequest": {
 										"method": "DELETE",
-										"header": [],
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"123456783\",\r\n    \"status\": \"Archive\"\r\n\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
 										"url": {
 											"raw": "http://localhost:8080/contact/{{id}}",
 											"protocol": "http",
@@ -1699,7 +1174,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"name\": \"Peter\",\n    \"surname\": \"John\",\n    \"phone\": \"0000000000\",\n    \"email\": \"12345@mail.com\",\n    \"city\": \"Rehovot\",\n    \"course\": \"Programming\",\n    \"source\": \"Interner\",\n    \"reminder\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"call to info\"\n        }\n    ],\n    \"comment\": [\n        {\n            \"date\": \"2024-07-16\",\n            \"massage\": \"Clossed on Fraiday\",\n            \"author\": \"ElenaDev\"\n        }\n    ],\n    \"activity log\": [\n        {\n            \"date\": \"12.07.2024\",\n            \"massage\": \"Student created\"\n        }\n    ]\n}"
+									"body": "{\n        \"id\": \"123456783\",\n        \"name\": \"test\",\n        \"surname\": \"test_new\",\n        \"phoneNumber\": \"0542305178\",\n        \"email\": \"elenapolishchuk@gmail.com\",\n        \"place\": \"Rehovot\",\n        \"course\": \"FSD\",\n        \"source\": null,\n        \"status\": \"Archive\",\n        \"comments\": \"pay for course\",\n        \"reminders\": []       \n}"
 								}
 							]
 						}
@@ -1775,7 +1250,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\n        \"MONDAY\",\n        \"TUESDAY\"\n    ],\n    \"webinarsDays\": [\n        \"WEDNESDAY\",\n        \"FRIDAY\"\n    ],\n    \"studentsID\": [\n        34,\n        2,\n        56\n    ],\n    \"reminders\": []\n}"
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\n        \"MONDAY\",\n        \"TUESDAY\"\n    ],\n    \"webinarsDays\": [\n        \"WEDNESDAY\",\n        \"FRIDAY\"\n    ],\n    \"contactsID\": [\n        34,\n        2,\n        56\n    ],\n    \"reminders\": [],\n    \"active\": true\n}"
 								}
 							]
 						},
@@ -1842,7 +1317,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\n        \"MONDAY\",\n        \"TUESDAY\"\n    ],\n    \"webinarsDays\": [\n        \"WEDNESDAY\",\n        \"FRIDAY\"\n    ],\n    \"studentsID\": [\n        34,\n        2,\n        56\n    ],\n    \"reminders\": [{\n        \"reminderTime\": \"2024-07-26T22:50:00\",\n        \"reminderText\": \"Напомнить group про встречу\"\n    }]\n    \n}"
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\n        \"MONDAY\",\n        \"TUESDAY\"\n    ],\n    \"webinarsDays\": [\n        \"WEDNESDAY\",\n        \"FRIDAY\"\n    ],\n    \"contactsID\": [\n        34,\n        2,\n        56\n    ],\n    \"reminders\": [{\n        \"reminderTime\": \"2024-07-26T22:50:00\",\n        \"reminderText\": \"Напомнить group про встречу\"\n    }],\n    \"active\": true\n    \n}"
 								}
 							]
 						}
@@ -1897,7 +1372,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56],\n    \"reminders\": [],\n    \"active\": true,\n    \"autoArchive\": false\n}"
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"contactsID\": [34, 2, 56],\n    \"reminders\": [],\n    \"active\": true\n    \n}"
 								}
 							]
 						},
@@ -1953,7 +1428,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n    {\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56],\n    \"reminders\": [],\n    \"active\": true,\n    \"autoArchive\": false\n    },\n    {\n    \"id\": \"java62\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56],\n    \"reminders\": [],\n    \"active\": true,\n    \"autoArchive\": false\n    }   \n    \n    \n]"
+									"body": "[\n    {\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"contactsID\": [34, 2, 56],\n    \"reminders\": [],\n    \"active\": true\n    \n    },\n    {\n    \"id\": \"java62\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"contactsID\": [34, 2, 56],\n    \"reminders\": [],\n    \"active\": true\n    \n    }   \n    \n    \n]"
 								}
 							]
 						}
@@ -2038,7 +1513,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56]\n}"
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"contactsID\": [34, 2, 56],\n    \"reminders\": [],\n    \"active\": true\n}"
 								}
 							]
 						},
@@ -2108,7 +1583,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\n        \"MONDAY\",\n        \"TUESDAY\"\n    ],\n    \"webinarsDays\": [\n        \"WEDNESDAY\",\n        \"FRIDAY\"\n    ],\n    \"studentsID\": [\n        34,\n        2,\n        56,\n        2324324, \n        3443434,\n        557567\n    ]\n}"
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\n        \"MONDAY\",\n        \"TUESDAY\"\n    ],\n    \"webinarsDays\": [\n        \"WEDNESDAY\",\n        \"FRIDAY\"\n    ],\n    \"contactsID\": [\n        34,\n        2,\n        56,\n        2324324, \n        3443434,\n        557567\n    ],\n    \"reminders\": [],\n    \"active\": true\n}"
 								}
 							]
 						},
@@ -2161,7 +1636,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": \"java53\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\n        \"MONDAY\",\n        \"TUESDAY\"\n    ],\n    \"webinarsDays\": [\n        \"WEDNESDAY\",\n        \"FRIDAY\"\n    ],\n    \"studentsID\": [\n        34,\n        2,\n        56,\n        2324324,\n        3443434,\n        557567\n    ]\n}"
+									"body": "{\n    \"id\": \"java53\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\n        \"MONDAY\",\n        \"TUESDAY\"\n    ],\n    \"webinarsDays\": [\n        \"WEDNESDAY\",\n        \"FRIDAY\"\n    ],\n    \"studentsID\": [\n        34,\n        2,\n        56,\n        2324324,\n        3443434,\n        557567\n    ],\n    \"reminders\": [],\n    \"active\": true\n}"
 								}
 							]
 						}
@@ -2216,7 +1691,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 2, 56],\n    \"archive\" : true\n}"
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"contactsID\": [34, 2, 56],\n    \"reminders\": [],\n    \"active\": false\n}"
 								}
 							]
 						},
@@ -2270,7 +1745,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"studentsID\": [34, 56],\n    \"archive\" : false\n}"
+									"body": "{\n    \"id\": \"java61\",\n    \"whatsApp\": \"whatsApp.com\",\n    \"skype\": \"skype.com\",\n    \"slack\": \"slack.com\",\n    \"startDate\": \"2024-07-28\",\n    \"expectedFinishDate\": \"2025-07-28\",\n    \"lessonsDays\": [\"MONDAY\", \"TUESDAY\"],\n    \"webinarsDays\": [\"WEDNESDAY\",\"FRIDAY\"],\n    \"contactsID\": [34, 56],\n    \"reminders\": [],\n    \"active\": true\n}"
 								}
 							]
 						}
@@ -2532,7 +2007,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"type\": \"Credit\",\n    \"amount\": \"16000\",\n    \"installments\": \"12\"\n}",
+									"raw": "{\n    \"type\": \"Credit\",\n    \"amount\": \"16000\",\n    \"installments\": \"12\",\n    \"each\": \"1333\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2563,7 +2038,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"studentId\":\"sara@mail.com\", \n    \"date\": \"2024-07-16\",\n    \"type\": \"Credit\",\n    \"amount\": \"16000\",\n    \"installments\": \"12\",\n    \"each\": \"1333\"\n}"
+							"body": "{\n    \"contactsId\":\"137\", \n    \"date\": \"2024-07-16\",\n    \"type\": \"Credit\",\n    \"amount\": \"16000\",\n    \"installments\": \"12\",\n    \"each\": \"1333\"\n}"
 						}
 					]
 				},
@@ -2642,7 +2117,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\r\n    \"studentId\":\"sara@mail.com\", \r\n    \"date\": \"2024-07-16\",\r\n    \"type\": \"Credit\",\r\n    \"amount\": \"16000\",\r\n    \"installments\": \"12\",\r\n    \"each\": \"1333\"\r\n}"
+							"body": "{\r\n    \"contactId\":\"sara@mail.com\", \r\n    \"date\": \"2024-07-16\",\r\n    \"type\": \"Credit\",\r\n    \"amount\": \"16000\",\r\n    \"installments\": \"12\",\r\n    \"each\": \"1333\"\r\n}"
 						}
 					]
 				}
