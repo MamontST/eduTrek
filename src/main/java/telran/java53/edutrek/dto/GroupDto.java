@@ -6,7 +6,7 @@ import java.util.List;
 import jakarta.persistence.Id;
 import java.time.DayOfWeek;
 
-public class Group {
+public class GroupDto {
 	@Id
 	String id;
 	String whatsApp;
