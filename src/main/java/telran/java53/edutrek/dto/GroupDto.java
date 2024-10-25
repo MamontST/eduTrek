@@ -3,11 +3,11 @@ package telran.java53.edutrek.dto;
 import java.time.LocalDate;
 import java.util.List;
 
-import jakarta.persistence.Id;
+
 import java.time.DayOfWeek;
 
 public class GroupDto {
-	@Id
+
 	String id;
 	String whatsApp;
 	String skype;

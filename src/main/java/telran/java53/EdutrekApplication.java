@@ -8,7 +8,7 @@ public class EdutrekApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EdutrekApplication.class, args);
-		System.out.println("EduTrec");
+		System.out.println("EduTrek");
 	}
 
 }
