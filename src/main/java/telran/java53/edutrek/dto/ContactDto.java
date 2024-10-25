@@ -27,6 +27,7 @@ public class ContactDto {
 	CoursesEnum course;
 	// это поле у студентов и статус архив
 	// List<String> groups;
+	@Singular
 	List<String> comments;
 	
 	@Singular

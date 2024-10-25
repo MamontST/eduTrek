@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
-import telran.java53.edutrek.dto.ContactCreateDto;
 import telran.java53.edutrek.dto.ContactDto;
 import telran.java53.edutrek.dto.ReminderDto;
-import telran.java53.edutrek.enums.StatusContact;
 import telran.java53.edutrek.service.ContactService;
 
 @RestController
@@ -25,47 +23,47 @@ public class ContactController {
 
 	private final ContactService contactService;
 
-	@PostMapping("/contact")
-	public ContactDto addContact(@RequestBody ContactCreateDto contactCreateDto) {
-		return contactService.addContact(contactCreateDto);
+	@PostMapping("")
+	public ContactDto addContact(@RequestBody ContactDto contactDto) {
+		return contactService.addContact(contactDto);
 	}
 
-	@GetMapping("/contact/all")
+	@GetMapping("/all")
 	public List<ContactDto> getAllContacts() {
 		return contactService.getAllContacts();
 	}
 
-	@GetMapping("/contact/{id}")
+	@GetMapping("/{id}")
 	public ContactDto getContactById(@PathVariable String id ) {
 		return contactService.getContactById(id);
 	}
 
-	@GetMapping("/contact/name/{name}")
+	@GetMapping("/name/{name}")
 	public List<ContactDto> getContactByName(@PathVariable String name) {
 		return contactService.getContactByName(name);
 	}
 
-	@GetMapping("/contact/status/{status}")
-	public List<ContactDto> getContactByStatus(StatusContact status) {
+	@GetMapping("/status/{status}")
+	public List<ContactDto> getContactByStatus(@PathVariable String status) {
 		return contactService.getContactByStatus(status);
 	}
 
-	@PutMapping("contact/{id}")
+	@PutMapping("/{id}")
 	public ContactDto updateContact(@PathVariable String id, @RequestBody ContactDto contactDto) {
 		return contactService.updateContact(id, contactDto);
 	}
 
-	@PutMapping("/contact/{id}/comment")
+	@PutMapping("/{id}/comment")
 	public ContactDto addComment(@PathVariable("{id}") String contactId, @RequestBody String comment) {
 		return contactService.addComment(contactId, comment);
 	}
 
-	@PutMapping("/contact/{id}/reminder")
+	@PutMapping("/{id}/reminder")
 	public ContactDto addReminder(@PathVariable("{id}") String contactId, @RequestBody ReminderDto reminderDto) {
 		return contactService.addReminder(contactId, reminderDto);
 	}
 
-	@DeleteMapping("/contact/{id}")
+	@DeleteMapping("/{id}")
 	public void archiveContact(@PathVariable String id) {
 		contactService.archiveContact(id);
 

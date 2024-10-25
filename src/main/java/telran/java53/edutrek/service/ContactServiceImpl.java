@@ -8,23 +8,26 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import telran.java53.edutrek.dao.ContactRepository;
-import telran.java53.edutrek.dto.ContactCreateDto;
 import telran.java53.edutrek.dto.ContactDto;
 import telran.java53.edutrek.dto.ReminderDto;
 import telran.java53.edutrek.enums.StatusContact;
+import telran.java53.edutrek.exception.ContactAlreadyExistsException;
 import telran.java53.edutrek.exception.ContactNotFoundException;
 import telran.java53.edutrek.model.Contact;
 
 @Service
 @RequiredArgsConstructor
-public class ContactServiseImpl implements ContactService {
+public class ContactServiceImpl implements ContactService {
 
 	private final ContactRepository contactRepository;
 	private final ModelMapper modelMapper;
 
 	@Override
-	public ContactDto addContact(ContactCreateDto contactCreateDto) {
-		Contact contact = modelMapper.map(contactCreateDto, Contact.class);
+	public ContactDto addContact(ContactDto contactDto) {
+	    if (contactRepository.findById(contactDto.getId()).isPresent()) {
+	        throw new ContactAlreadyExistsException();
+	    }
+		Contact contact = modelMapper.map(contactDto, Contact.class);
 		contactRepository.save(contact);
 		return modelMapper.map(contact, ContactDto.class);
 	}
@@ -49,8 +52,14 @@ public class ContactServiseImpl implements ContactService {
 	}
 
 	@Override
-	public List<ContactDto> getContactByStatus(StatusContact status) {
-		return contactRepository.findByStatus(status).stream()
+	public List<ContactDto> getContactByStatus(String status) {
+		StatusContact statusContact;
+        try {
+            statusContact = StatusContact.valueOf(status.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid status: " + status);
+        }
+		return contactRepository.findByStatus(statusContact).stream()
 				.map(contact -> modelMapper.map(contact, ContactDto.class)).collect(Collectors.toList());
 	}
 

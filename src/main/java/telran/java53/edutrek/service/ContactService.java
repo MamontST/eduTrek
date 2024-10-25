@@ -1,14 +1,11 @@
 package telran.java53.edutrek.service;
 
 import java.util.List;
-
-import telran.java53.edutrek.dto.ContactCreateDto;
 import telran.java53.edutrek.dto.ContactDto;
 import telran.java53.edutrek.dto.ReminderDto;
-import telran.java53.edutrek.enums.StatusContact;
 
 public interface ContactService {
-	ContactDto addContact(ContactCreateDto contactCreateDto);
+	ContactDto addContact(ContactDto contactDto);
 
 	List<ContactDto> getAllContacts();
 
@@ -16,7 +13,7 @@ public interface ContactService {
 
 	List<ContactDto> getContactByName(String name);
 
-	List<ContactDto> getContactByStatus(StatusContact status);
+	List<ContactDto> getContactByStatus(String status);
 
 	ContactDto updateContact(String id, ContactDto contactDto);
 
