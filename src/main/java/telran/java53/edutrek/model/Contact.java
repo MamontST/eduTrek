@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import telran.java53.edutrek.dto.ReminderDto;
 import telran.java53.edutrek.enums.CoursesEnum;
+import telran.java53.edutrek.enums.Source;
 import telran.java53.edutrek.enums.StatusContact;
 
 @Data
@@ -28,4 +29,5 @@ public class Contact {
 	private CoursesEnum course;
 	private List<String> comments;
 	private List<ReminderDto> reminders;
+	private Source source;
 }

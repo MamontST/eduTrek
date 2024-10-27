@@ -25,7 +25,7 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public ContactDto addContact(ContactDto contactDto) {
 	    if (contactRepository.findById(contactDto.getId()).isPresent()) {
-	        throw new ContactAlreadyExistsException();
+	        throw new ContactAlreadyExistsException("Contact " + contactDto.getId() + " already exists");
 	    }
 		Contact contact = modelMapper.map(contactDto, Contact.class);
 		contactRepository.save(contact);

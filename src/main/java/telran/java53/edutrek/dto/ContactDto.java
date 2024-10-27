@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
 import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 import telran.java53.edutrek.enums.CoursesEnum;
+import telran.java53.edutrek.enums.Source;
 import telran.java53.edutrek.enums.StatusContact;
 import lombok.Getter;
 import lombok.Singular;
@@ -34,4 +35,5 @@ public class ContactDto {
 	List<ReminderDto> reminders;
 	// такого поля нет в контактах
 	// List<String> activityLog;
+	Source source;
 }
