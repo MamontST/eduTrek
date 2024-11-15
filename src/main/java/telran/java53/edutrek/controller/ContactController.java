@@ -17,53 +17,55 @@ import telran.java53.edutrek.dto.ReminderDto;
 import telran.java53.edutrek.service.ContactService;
 
 @RestController
-@RequestMapping("/contact")
 @RequiredArgsConstructor
+//@RequestMapping("/contact")
+
 public class ContactController {
 
-	private final ContactService contactService;
+	final ContactService contactService;
+	
 
-	@PostMapping("")
+	@PostMapping("/contact")
 	public ContactDto addContact(@RequestBody ContactDto contactDto) {
 		return contactService.addContact(contactDto);
 	}
 
-	@GetMapping("/all")
+	@GetMapping("/contact/all")
 	public List<ContactDto> getAllContacts() {
 		return contactService.getAllContacts();
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/contact/{id}")
 	public ContactDto getContactById(@PathVariable String id ) {
 		return contactService.getContactById(id);
 	}
 
-	@GetMapping("/name/{name}")
+	@GetMapping("/contact/name/{name}")
 	public List<ContactDto> getContactByName(@PathVariable String name) {
 		return contactService.getContactByName(name);
 	}
 
-	@GetMapping("/status/{status}")
+	@GetMapping("/contact/status/{status}")
 	public List<ContactDto> getContactByStatus(@PathVariable String status) {
 		return contactService.getContactByStatus(status);
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("/contact/{id}")
 	public ContactDto updateContact(@PathVariable String id, @RequestBody ContactDto contactDto) {
 		return contactService.updateContact(id, contactDto);
 	}
 
-	@PutMapping("/{id}/comment")
+	@PutMapping("/contact/{id}/comment")
 	public ContactDto addComment(@PathVariable("{id}") String contactId, @RequestBody String comment) {
 		return contactService.addComment(contactId, comment);
 	}
 
-	@PutMapping("/{id}/reminder")
+	@PutMapping("/contact/{id}/reminder")
 	public ContactDto addReminder(@PathVariable("{id}") String contactId, @RequestBody ReminderDto reminderDto) {
 		return contactService.addReminder(contactId, reminderDto);
 	}
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/contact/{id}")
 	public void archiveContact(@PathVariable String id) {
 		contactService.archiveContact(id);
 

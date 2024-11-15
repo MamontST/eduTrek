@@ -1,5 +1,5 @@
 package telran.java53.edutrek.enums;
 
 public enum Source {
-	ADS, FRIEND, STUDY, INTERNET
+	ADS, ADS2, FRIEND, STUDY, INTERNET
 }

@@ -25,15 +25,10 @@ public class ContactDto {
 	String email;
 	String place;
 	StatusContact status;
-	CoursesEnum course;
-	// это поле у студентов и статус архив
-	// List<String> groups;
+	CoursesEnum course;	
 	@Singular
-	List<String> comments;
-	
+	List<String> comments;	
 	@Singular
-	List<ReminderDto> reminders;
-	// такого поля нет в контактах
-	// List<String> activityLog;
+	List<ReminderDto> reminders;	
 	Source source;
 }
